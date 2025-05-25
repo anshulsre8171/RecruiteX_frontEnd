@@ -30,7 +30,7 @@ const {register,handleSubmit, formState:{errors}}=useForm({
             localStorage.setItem("data",JSON.stringify(response.data.data))
             localStorage.setItem("userType",JSON.stringify('recruiter'))
             alert("Login Successfull !...")
-            navigate('/seeker')
+            navigate('/recruiter/postjob')
         }else if(response.data.code==203){
             alert("Your Account is Blocked contact to Admin")
         }
