@@ -2,18 +2,30 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
+import { swalFire } from '../../Helpers/Swalfire';
 const schema = yup
     .object()
     .shape({
-        name: yup.string().required().min(2).max(20),
-        img: yup.mixed().required(),
-        email: yup.string().required().email(),
-        contact: yup.string().required(),
+        name: yup.string().min(2).max(50).required("Name is required"),
+        img: yup.mixed().required('File is required')
+            // only images
+            .test('fileType', 'Only image files are allowed', (value) => {
+                const file = value?.[0];
+                const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+                return file && allowedTypes.includes(file.type);
+            }),
+        email: yup.string().email("Invalid email address").required(),
+        contact: yup.string().matches(/^[789]\d{9}$/, "enter indian number  10 digits").required(),
         password: yup.string().required(),
         qualification: yup.string().required(),
         location: yup.string().required(),
         preference: yup.string().required(),
-        resume: yup.mixed().required()
+        resume: yup.mixed().required() // only pdf
+            .test('fileType', 'Only PDF files are allowed', (value) => {
+                const file = value?.[0];
+                return file && file.type === 'application/pdf' && file.name.toLowerCase().endsWith('.pdf');
+            }),
+        // gender: yup.string().oneOf(["Male", "Female", "Other"], "Invalid gender").required(),
     })
 
 function SeekerRegister() {
@@ -37,8 +49,8 @@ function SeekerRegister() {
                 "Content-Type": "multipart/form-data"
             }
         })
-        alert("Registation SuccessFull !.")
-
+        //alert("Registation SuccessFull !.")
+        swalFire("Auth", "Registation SuccessFull !.", "success")
     }
 
     return (<>
@@ -64,6 +76,8 @@ function SeekerRegister() {
                                 <div className="row mb-4">
                                     <input className="form-control "
                                         type="file"
+                                        accept="image/*"
+                                        title="Select your Profile picture"
                                         {...register('img')}
                                     />
                                     {errors.img?.message && <span className='error_msg'>{errors.img?.message}</span>}
@@ -79,7 +93,8 @@ function SeekerRegister() {
                                 <div className="row mb-4">
                                     <input className="form-control "
                                         placeholder="Enter Your contact"
-                                        type="number"
+                                        type="tel"
+                                        maxLength={10}
                                         {...register('contact')} />
                                     {errors.contact?.message && <span className='error_msg'>{errors.contact?.message}</span>}
                                 </div>
@@ -119,6 +134,7 @@ function SeekerRegister() {
                                         className="form-control"
                                         type="file"
                                         accept="application/pdf"
+                                         title="Select your Resume only PDF formate"
                                         {...register('resume')}
                                     />
 

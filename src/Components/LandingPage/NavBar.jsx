@@ -38,7 +38,7 @@ if (userType === "admin") {
         <div className="col-12">
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-              <Link className="navbar-brand" to="">
+              <Link className="navbar-brand" to="#">
                 <img className='nav_bar_logo' src={`http://localhost:9000/upload/${data.img}`} />
               </Link>
               <button
@@ -89,7 +89,7 @@ if (userType === "admin") {
         <div className="col-12">
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-              <Link className="navbar-brand" to="">
+              <Link className="navbar-brand" to="/">
               <img className='nav_bar_logo' src={`http://localhost:9000/upload/${data.img}`} />
               </Link>
               <button
@@ -140,7 +140,7 @@ if (userType === "admin") {
         <div className="col-12">
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-              <Link className="navbar-brand" to="">
+              <Link className="navbar-brand" to="/">
               <img className='nav_bar_logo' src={`http://localhost:9000/upload/${data.logo}`} />
             
               </Link>

@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import axios from 'axios';
+import { swalFire } from '../../Helpers/Swalfire';
 const schema = yup
   .object()
   .shape({
@@ -44,8 +45,8 @@ const schema = yup
                 "Content-Type":"multipart/form-data"
             }
            })
-    alert("Registation SuccessFull !.")
-      
+   // alert("Registation SuccessFull !.")
+      swalFire("Auth", "Registation SuccessFull !.", "success")
       }
 
     return(<>

@@ -51,7 +51,6 @@ function App() {
             <Route path="/admin" element={<AdminUpdate />} />
             <Route path="/admin/seekerlist" element={<><AdminSeeker /></>} />
             <Route path="/admin/recruiterlist" element={<><AdminRecruiter /></>} />
-
           </>)}
 
           {/* Seeker */}
@@ -60,6 +59,7 @@ function App() {
             <Route path="/seeker/jobapply" element={<SeekerApplyJobList />} />
             <Route path="/seeker/update" element={<SeekerUpdate />} />
             <Route path="/seeker/appliedjob" element={<SeekerAppliedJob />} />
+
           </>)}
 
           {/* Recruiter */}

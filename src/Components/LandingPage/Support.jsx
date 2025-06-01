@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 function Support(){
     return (
         <>
@@ -31,8 +31,10 @@ function Support(){
                 temnthp incididunt ut labore mollit anim laborum suis aute 
                 velit esscillumlore eu quife nrulla parihatur.
             </div>
-            <button className="btn_support mt-5" type="button">
-                Post a job
+            <button className="btn_support mt-5" type="button">              
+            <Link className="nav-link " aria-current="page" to="/recruiter/login">
+             Post a job
+            </Link>  
             </button>
         </div>
 

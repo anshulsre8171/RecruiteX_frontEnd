@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { swalFire } from '../../Helpers/Swalfire';
 const schema = yup
   .object()
   .shape({
@@ -32,10 +33,12 @@ const {register,handleSubmit, formState:{errors}}=useForm({
         localStorage.setItem("userType",JSON.stringify('admin'))
 
 
-        alert("Login Successfull !...")
-        navigate('/admin')
+        //alert("Login Successfull !...")
+        swalFire("Auth", "Login Successfull !...", "success")        
+        navigate('/admin/recruiterlist')
     }else{
-        alert("Invalid Email or Password !...")
+        //alert("Invalid Email or Password !...")
+        swalFire("Auth", "Invalid Email or Password !...", "error")
     }
       
       }

@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { swalFire } from '../../Helpers/Swalfire';
 const schema = yup
   .object()
   .shape({
@@ -29,13 +30,17 @@ const {register,handleSubmit, formState:{errors}}=useForm({
            if(response.data.code==200){
             localStorage.setItem("data",JSON.stringify(response.data.data))
             localStorage.setItem("userType",JSON.stringify('recruiter'))
-            alert("Login Successfull !...")
+            //alert("Login Successfull !...")
+            swalFire("Auth", "Login SuccessFull !.", "success")
             navigate('/recruiter/postjob')
         }else if(response.data.code==203){
-            alert("Your Account is Blocked contact to Admin")
+           // alert("Your Account is Blocked contact to Admin")
+            swalFire("Auth", "Your Account is Blocked contact to Admin", "warning")
         }
         else if (response.data.code==302){
-            alert("Invaild Email or password")
+            //alert("Invaild Email or password")
+            swalFire("Auth", "Invaild Email or password", "error")
+            
         }
       
       }
