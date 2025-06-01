@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';    // Form Validation
 import { yupResolver } from '@hookform/resolvers/yup';   // Form Validation
 import * as yup from 'yup';   // Form Validation
-import '../../app.css'
+// import '../../app.css'
 import axios from 'axios';
 
 const schema = yup
