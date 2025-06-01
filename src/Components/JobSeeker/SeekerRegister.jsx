@@ -44,7 +44,7 @@ function SeekerRegister() {
         formData.append("location", data.location)
         formData.append("preference", data.jobPreference)
         formData.append("resume", data.resume[0])
-        await axios.post("http://localhost:9000/api/seeker-register", formData, {
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/seeker-register`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }

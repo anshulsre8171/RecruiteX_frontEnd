@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 
+
 function RecruiterPostedJobs(){
     const [dataId,setData]=useState()
     const [jobData,setJobData]=useState([])
@@ -18,7 +19,7 @@ function RecruiterPostedJobs(){
         const payload={
             companyId:temData._id
         }
-     const response= await axios.post("http://localhost:9000/api/recruiter-postedjob",payload,{
+     const response= await axios.post(`${process.env.REACT_APP_API_URL}/api/recruiter-postedjob`,payload,{
             headers:{
                 "Content-Type":"application/json"
             }
