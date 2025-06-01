@@ -6,6 +6,7 @@ function NavBar() {
   const [data, setData] = useState("");
   const [userType, setUserType] = useState("");
   const nav = useNavigate();    
+   const API_URL=import.meta.env.VITE_APP_API_URL
 
   useEffect(() => {
     const temData = JSON.parse(localStorage.getItem("data"));
@@ -39,7 +40,7 @@ if (userType === "admin") {
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
               <Link className="navbar-brand" to="#">
-                <img className='nav_bar_logo' src={`http://localhost:9000/upload/${data.img}`} />
+                <img className='nav_bar_logo' src={`${API_URL}/upload/${data.img}`} />
               </Link>
               <button
                 className="navbar-toggler"
@@ -90,7 +91,7 @@ if (userType === "admin") {
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
               <Link className="navbar-brand" to="/">
-              <img className='nav_bar_logo' src={`http://localhost:9000/upload/${data.img}`} />
+              <img className='nav_bar_logo' src={`${API_URL}/upload/${data.img}`} />
               </Link>
               <button
                 className="navbar-toggler"
@@ -141,7 +142,7 @@ if (userType === "admin") {
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
               <Link className="navbar-brand" to="/">
-              <img className='nav_bar_logo' src={`http://localhost:9000/upload/${data.logo}`} />
+              <img className='nav_bar_logo' src={`${API_URL}/upload/${data.logo}`} />
             
               </Link>
               <button
