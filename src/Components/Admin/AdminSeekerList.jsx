@@ -1,6 +1,7 @@
 import { useEffect ,useState} from "react"
 import axios from "axios"
 function AdminSeeker(){
+     const API_URL=import.meta.env.VITE_APP_API_URL
     const [seeker, setSeeker] = useState([])
     useEffect(()=>{
         fetchData()
@@ -8,7 +9,7 @@ function AdminSeeker(){
     },[])
 
     const fetchData=async()=>{
-         const response=await axios.get("http://localhost:9000/api/admin-seekerlist",{
+         const response=await axios.get(`${API_URL}/api/admin-seekerlist`,{
             headers:{
                 "Content-Type":"application/json"
             }
@@ -21,7 +22,7 @@ function AdminSeeker(){
     const payload={
         status:item.isBlock ? false : true
     }
-    const response=await axios.put(`http://localhost:9000/api/admin-seekerblock/${item._id}`,payload,{
+    const response=await axios.put(`${API_URL}/api/admin-seekerblock/${item._id}`,payload,{
         headers:{
             "Content-Type":"application/json"
         }
@@ -42,7 +43,7 @@ function AdminSeeker(){
                         <div className="col-12 col-md-6 col-lg-4 seeker_list my-2 mx-2" key={index}>
                             <div className="card border border-none p-2 h-100">
                                 <div className="text-center">
-                                    <img className="seeker_img img-fluid rounded-circle" src={`http://localhost:9000/upload/${item.img}`} alt={item.name} style={{ maxWidth: '100px', height: '100px' }} />
+                                    <img className="seeker_img img-fluid rounded-circle" src={`${API_URL}upload/${item.img}`} alt={item.name} style={{ maxWidth: '100px', height: '100px' }} />
                                 </div>
                                 <div className="seeker_name text-center mt-2 font-weight-bold">{item.name}</div>
                                 <table className="table table-borderless mt-3">

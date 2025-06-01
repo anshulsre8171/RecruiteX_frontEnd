@@ -18,6 +18,7 @@ const schema = yup
     category: yup.string().required()
   })
 const Postjob = () => {
+   const API_URL=import.meta.env.VITE_APP_API_URL
       const [dataId,setData]=useState("")
       useEffect(()=>{
          const temData=JSON.parse(localStorage.getItem("data"));
@@ -41,7 +42,7 @@ const { register, handleSubmit,reset, formState: { errors } } = useForm({
         applyDate:data.applyDate,
         category:data.category
       }
-   const response=await axios.post("http://localhost:9000/api/recruiter-jobpost",payload,{
+   const response=await axios.post(`${API_URL}/api/recruiter-jobpost`,payload,{
       headers: {
         "Content-Type":"application/json"
       }

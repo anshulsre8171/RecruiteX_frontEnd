@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 function RecruiterAppliedJob(){
+     const API_URL=import.meta.env.VITE_APP_API_URL
     const [dataId,setData]=useState()
     const [jobData,setJobData]=useState([])
     useEffect(()=>{
@@ -18,7 +19,7 @@ function RecruiterAppliedJob(){
         const payload={
             companyId:temData._id
         }
-     const response= await axios.post("http://localhost:9000/api/recruiter-applied",payload,{
+     const response= await axios.post(`${API_URL}/api/recruiter-applied`,payload,{
             headers:{
                 "Content-Type":"application/json"
             }
@@ -34,13 +35,13 @@ function RecruiterAppliedJob(){
         <div className="container my-3">
                 
                 {jobData.map((el) => {
-                    console.log(el,"###########################################")
+                    //console.log(el,"###########################################")
                     return (
                         <div className="card p-3 mb-3 postedjob_card">
                         <div className="row d-flex justify-content-center align-items-center">
                             {/* Logo Column */}
                             <div className="col-md-3 d-flex justify-content-center align-items-center">
-                                <img src={`http://localhost:9000/upload/${el.img}`} alt="Company Logo" className="img-fluid bg-dark" style={{ maxHeight: '100px' }} />
+                                <img src={`${API_URL}/upload/${el.img}`} alt="Company Logo" className="img-fluid bg-dark" style={{ maxHeight: '100px' }} />
                             </div>
 
                             {/* Company Name, Job Title, and Job Type Column */}
@@ -62,7 +63,7 @@ function RecruiterAppliedJob(){
                                 <div className='postedjob_p2 mb-2'>Contact: <span className='postedjob_p1'> {el?.contact}</span></div>
                                 <div className='postedjob_p2 mb-2'>Email: <span className='postedjob_p1'> {el?.email}</span></div>
                                 <div className='postedjob_p2 mb-2'> 
-                                <a href={`http://localhost:9000/upload/${el.resume}`} target="_blank">Download</a></div> 
+                                <a href={`${API_URL}/upload/${el.resume}`} target="_blank">Download</a></div> 
                                 </div>
                         </div>
                         </div>

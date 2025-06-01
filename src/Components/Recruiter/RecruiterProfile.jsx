@@ -17,6 +17,7 @@ const schema = yup
 
 
 const RecruiterUpdate = () => {
+   const API_URL=import.meta.env.VITE_APP_API_URL
   useEffect(()=>{
     const userdetails= JSON.parse(localStorage.getItem("data"));
     if(userdetails){
@@ -45,7 +46,7 @@ const RecruiterUpdate = () => {
           return ;
          } 
          const temData= JSON.parse(localStorage.getItem("data"));
-        const response=await axios.put(`http://localhost:9000/api/recruiter-update/${temData._id}`,formData,{
+        const response=await axios.put(`${API_URL}/api/recruiter-update/${temData._id}`,formData,{
           headers:{
             "Content-Type":"multipart/form-data"
           }

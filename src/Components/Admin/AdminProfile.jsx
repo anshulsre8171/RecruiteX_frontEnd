@@ -18,6 +18,7 @@ const schema = yup
 
 
 const AdminUpdate = () => {
+   const API_URL=import.meta.env.VITE_APP_API_URL
       useEffect(()=>{
         const userdetails= JSON.parse(localStorage.getItem("data"));
         if(userdetails){
@@ -46,7 +47,7 @@ const AdminUpdate = () => {
         formData.append('password', data.password);
         formData.append('location', data.location);
         formData.append('img', data.img[0]);
-        const response=await axios.put(`http://localhost:9000/api/admin-update/${temData._id}`,formData,{
+        const response=await axios.put( `${API_URL}/api/admin-update/${temData._id}`,formData,{
           headers:{
             "Content-Type":"multipart/form-data"
           }

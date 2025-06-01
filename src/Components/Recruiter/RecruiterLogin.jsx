@@ -13,6 +13,7 @@ const schema = yup
 
  function RecruiterLogin(){
 const navigate=useNavigate()
+ const API_URL=import.meta.env.VITE_APP_API_URL
 
 const {register,handleSubmit, formState:{errors}}=useForm({
     resolver:yupResolver(schema)
@@ -22,7 +23,7 @@ const {register,handleSubmit, formState:{errors}}=useForm({
          email:data.email,
          password:data.password
         }
-      const response=await   axios.post("http://localhost:9000/api/Recruiter-login",payLoad,{
+      const response=await   axios.post(`${API_URL}/api/Recruiter-login`,payLoad,{
             headers:{
                 "Content-Type":"application/json"
             }

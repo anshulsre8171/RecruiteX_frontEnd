@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 
 function RecruiterPostedJobs(){
+     const API_URL=import.meta.env.VITE_APP_API_URL
     const [dataId,setData]=useState()
     const [jobData,setJobData]=useState([])
     useEffect(()=>{
@@ -19,7 +20,7 @@ function RecruiterPostedJobs(){
         const payload={
             companyId:temData._id
         }
-     const response= await axios.post(`${process.env.REACT_APP_API_URL}/api/recruiter-postedjob`,payload,{
+     const response= await axios.post(`${API_URL}/api/recruiter-postedjob`,payload,{
             headers:{
                 "Content-Type":"application/json"
             }
@@ -42,7 +43,7 @@ function RecruiterPostedJobs(){
                         <div className="row d-flex justify-content-center align-items-center">
                             {/* Logo Column */}
                             <div className="col-md-3 d-flex justify-content-center align-items-center">
-                                <img src={`http://localhost:9000/upload/${el.logo}`} alt="Company Logo" className="img-fluid bg-dark" style={{ maxHeight: '100px' }} />
+                                <img src={`${API_URL}/upload/${el.logo}`} alt="Company Logo" className="img-fluid bg-dark" style={{ maxHeight: '100px' }} />
                             </div>
 
                             {/* Company Name, Job Title, and Job Type Column */}

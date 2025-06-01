@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { swalFire } from '../../Helpers/Swalfire';
+import { useNavigate } from 'react-router-dom';
 const schema = yup
     .object()
     .shape({
@@ -29,6 +30,7 @@ const schema = yup
     })
 function SeekerRegister() {
  const API_URL=import.meta.env.VITE_APP_API_URL
+  const navigate=useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
@@ -53,6 +55,7 @@ function SeekerRegister() {
         })
         //alert("Registation SuccessFull !.")
         swalFire("Auth", "Registation SuccessFull !.", "success")
+        navigate("/seeker/login")
     }
 
     return (<>

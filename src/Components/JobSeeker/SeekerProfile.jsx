@@ -18,6 +18,7 @@ const schema = Yup.object().shape({
 });
 
 const SeekerUpdate = () => {
+   const API_URL=import.meta.env.VITE_APP_API_URL
   const { register, handleSubmit, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
@@ -54,7 +55,7 @@ const SeekerUpdate = () => {
 
     const temData = JSON.parse(localStorage.getItem("data"));
     try {
-      const response = await axios.put(`http://localhost:9000/api/seeker-update/${temData._id}`, formData, {
+      const response = await axios.put(`${API_URL}/api/seeker-update/${temData._id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

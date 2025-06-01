@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import axios from 'axios';
 import { swalFire } from '../../Helpers/Swalfire';
+import { useNavigate } from 'react-router-dom';
 const schema = yup
   .object()
   .shape({
@@ -28,7 +29,8 @@ const schema = yup
    })
 
  function RecruiterRegister(){
-
+ const API_URL=import.meta.env.VITE_APP_API_URL
+ const navigate=useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
       });
@@ -40,13 +42,14 @@ const schema = yup
          formData.append("password",data.password)
          formData.append("location",data.location)
          formData.append("logo",data.logo[0])
-         await   axios.post("http://localhost:9000/api/recruiter-register",formData,{
+         await   axios.post(`${API_URL}/api/recruiter-register`,formData,{
             headers:{
                 "Content-Type":"multipart/form-data"
             }
            })
    // alert("Registation SuccessFull !.")
       swalFire("Auth", "Registation SuccessFull !.", "success")
+      navigate("/recruiter/login")
       }
 
     return(<>

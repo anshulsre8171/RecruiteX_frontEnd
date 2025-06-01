@@ -12,6 +12,7 @@ const schema = yup
   })
 
  function SeekerLogin(){
+     const API_URL=import.meta.env.VITE_APP_API_URL
 const navigate=useNavigate()
 
 const {register,handleSubmit, formState:{errors}}=useForm({
@@ -22,7 +23,7 @@ const {register,handleSubmit, formState:{errors}}=useForm({
          email:data.email,
          password:data.password
         }
-      const response=await   axios.post("http://localhost:9000/api/Seeker-login",payLoad,{
+      const response=await   axios.post(`${API_URL}/api/Seeker-login`,payLoad,{
             headers:{
                 "Content-Type":"application/json"
             }
