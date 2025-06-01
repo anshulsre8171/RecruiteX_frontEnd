@@ -27,13 +27,15 @@ const schema = yup
             }),
         // gender: yup.string().oneOf(["Male", "Female", "Other"], "Invalid gender").required(),
     })
-
 function SeekerRegister() {
+ const API_URL=import.meta.env.VITE_APP_API_URL
 
+    
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
     const handleData = async (data) => {
+         console.log(`${API_URL}`,"ssssssssssssssssss");
         const formData = new FormData();
         formData.append("name", data.name);
         formData.append("img", data.img[0]);
@@ -44,7 +46,9 @@ function SeekerRegister() {
         formData.append("location", data.location)
         formData.append("preference", data.jobPreference)
         formData.append("resume", data.resume[0])
-        await axios.post(`${process.env.REACT_APP_API_URL}/api/seeker-register`, formData, {
+       
+        
+        await axios.post(`${API_URL}/api/seeker-register`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
