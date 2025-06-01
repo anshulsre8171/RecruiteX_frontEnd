@@ -29,13 +29,11 @@ const schema = yup
     })
 function SeekerRegister() {
  const API_URL=import.meta.env.VITE_APP_API_URL
-
-    
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
     const handleData = async (data) => {
-         console.log(`${API_URL}`,"ssssssssssssssssss");
+       //  console.log(`${API_URL}`,"ssssssssssssssssss");
         const formData = new FormData();
         formData.append("name", data.name);
         formData.append("img", data.img[0]);
