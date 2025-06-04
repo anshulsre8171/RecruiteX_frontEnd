@@ -25,7 +25,7 @@ function Home() {
           </h1>
         </div>
         <div className="col-lg-5 col-md-5 col-sm-12"></div>
-      </div>
+      </div> 
 
       {/* category section */}
       <Category />

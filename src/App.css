@@ -7,41 +7,85 @@
    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Slight box shadow */
    outline: none; /* Remove outline */
 }
- body{
-    overflow-x: hidden !important;
- }
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 
+html, body {
+  width: 100%;
+  box-sizing: border-box;
+}
+* {
+  /* outline: 1px solid red; */
+   box-sizing: border-box;
+}
  .navbar_main_row {
   box-shadow: 0px 0px 10px #dfd8d8;
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px); /* Adjust the blur value as needed */
-  min-height: 50px;
+  backdrop-filter: blur(25px); /* Adjust the blur value as needed */
+  min-height:50px;
+  position: sticky;
+  top: 0!important;
+  z-index: 1030;
 }
-
-
-
- .nav_font{
-font-size: 20px;
+.nav_font{
+font-size: 18px;
 color:#212529 !important;
-margin-left:30px;
  }
-
- .nav_font:hover {
+.nav_font:hover {
 color: #ff2642 !important;
  }
-
+.navbar-brand{
+  height: 50px!important;
+}
+.nav-link{
+border-bottom: 2px solid transparent;
+box-sizing: border-box;
+}
+.n:hover{
+border-bottom: 2px solid black;
+box-sizing: border-box;
+}
  .hero_section{
     background: url("/h1_hero.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 550px !important;
- }
+    min-height: 500px !important;
+}
 
-.typewriter_hero{
-   font-size: 75px !important;
-   padding-top:70px;
-   color: #1f2b7b !important;
+@media (max-width: 768px) {
+  .hero_section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.typewriter_hero {
+  font-size: 2.6rem!important;
+  font-weight: bold;
+  color: #1f2b7b !important;
+  min-height: 250px;
+  margin-top: 140px;
+}
+
+/* Tablet screens */
+@media (max-width: 992px) {
+  .typewriter_hero {
+    font-size: 2.2rem!important;
+    text-align: center;
+    color: #1f2b7b !important;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 576px) {
+  .typewriter_hero {
+    font-size: 1.6rem!important;
+    text-align: left;
+    color: #1f2b7b !important;
+  }
 }
 
 
@@ -94,13 +138,11 @@ color: #ff2642 !important;
  
  .categoty_outer{
    min-height: 550px;
-   background:#ffffff;
+   /* background:#ffffff; */
  }
-
-
  .child_row{
-   min-height: 600px;
-   
+   min-height: 550px;
+   background: linear-gradient(to bottom, white 0%,white 70% ,#484da2f8);
  }
 
  .category_feature{
@@ -112,7 +154,7 @@ color: #ff2642 !important;
  }
 
  .category_outer_box{
-   min-height: 600px; 
+   min-height: 500px; 
  }
   
  .card_category{
@@ -125,15 +167,14 @@ color: #ff2642 !important;
    box-sizing: border-box;
    background: #ffffff;
    border-radius: 7px;
-  
-   transition: all ease 1s;
+   transition: all ease 0.6s;
    border:2px solid #f7f7f9;
  }
 
  .child_div:hover{
    transform: scale(1.03);
-   transition: all ease 1s;
-   box-shadow: 1px 1px 7px 5px #f7f7f9;
+   transition: all ease .7s;
+   box-shadow: 1px 1px 7px 5px #9b9bbe;
  }
 
  .category_icon{
@@ -154,12 +195,10 @@ color: #ff2642 !important;
  
 
 
-
-
  .resume_image
  {
    /* background-image: url('/cv_bg.jpg'); */
-   background-color: #4c5595;
+   background-color: #5a5fb5f8;
    background-size: 100% 100%;
    background-repeat: no-repeat;
    min-height:350px ;
@@ -181,7 +220,10 @@ color: #ff2642 !important;
    color:white;
 }
 .upload_resume:hover{
-   color:white
+   color:rgb(228, 220, 220);
+   transform: scale(1.01);
+   box-shadow: 1px 1px 7px 5px #c8c8e8;
+   transition: all ease .6s;
 }
 .text_color
 {
@@ -208,7 +250,7 @@ color: #ff2642 !important;
    margin-bottom: 30px;
    box-shadow: 0px 0px 3px white;
    transform:scale(1.01);
-   transition: all 1s;
+   transition: all .6s;
 }
 .tex{
    
@@ -220,13 +262,12 @@ color: #ff2642 !important;
 /* hii*/
 
 .jobs_outer{
-   min-height: 600px;
+   min-height: 300px;
    background: #ffffff;    
  }
 
  .jobchild_row{
-   min-height: 600px;
-   
+   min-height: 300px;
  }
 
  .jobs_feature{
@@ -239,65 +280,62 @@ color: #ff2642 !important;
  }
 
  .jobs_outer_box{
-   min-height: 600px; 
+   min-height: 300px; 
  }
   
  .jobcard_category{
-   min-height: 110px;
+   min-height: 100px;
    box-sizing: border-box;
-   
-    
  }
  .jobchild_div{
    min-height: 100px;
    padding: 10px;
    box-sizing: border-box;
    border-radius: 3px;
-   transition: all ease .8s;
+   transition: all ease .6s;
 
   
  }
 
  .jobchild_div:hover{
    transform: scale(1.01);
-   box-shadow: 1px 1px 7px 5px #f7f7f9;
-   transition: all ease .8s;
+   box-shadow: 1px 1px 7px 5px #c8c8e8;
+   transition: all ease .6s;
  }
 
  .jobs_icon{
    font-size: 60px;
    color: #5f8eb3;
-   padding: 5px;
+   padding:1px;
  }
  
  .jobs_title{
-   
    box-sizing: border-box;
  }
  
  .jobs_name{
    float: left;
-   font-size: 15px;
+   font-size: 13px;
    font-weight: 300;
    box-sizing: border-box;
  }
 
  .jobs_location{
    float: left;
-   font-size: 15px;
+   font-size: 13px;
    font-weight: 300;
    box-sizing: border-box;
  }
 
  .jobs_salary{
    float: left;
-   font-size: 15px;
+   font-size: 13px;
    font-weight: 300;
    box-sizing: border-box;
  }
 
  .jobs_time{
-   font-size: 15px;
+   font-size: 14px;
    font-weight: 400;
  }
 
@@ -305,14 +343,15 @@ color: #ff2642 !important;
    border: 1px solid #8d94dd;
    color: #8d94dd;
    border-radius:20px;
-   height: 35px;
+   height: 30px;
    width:120px;
-   line-height: 30px;
+   line-height: 25px;
+   display: block;
  }
 
 
  .content_col{
-   min-height: 130px;
+   min-height: 90px;
    box-sizing: border-box;
  }
 
@@ -336,7 +375,7 @@ color: #ff2642 !important;
       font-size: 1.2rem; /* Adjust the title size */
   }
   .jobs_btn {
-      padding: 0.5rem 1rem; /* Adjust button padding */
+      padding: 0.2rem 0.5rem; /* Adjust button padding */
   }
 }
 
@@ -349,7 +388,7 @@ color: #ff2642 !important;
 .apply_image
 {
    background-image: url('/how-applybg.png');
-   min-height: 600px;
+   min-height: 500px;
 
 }
 
@@ -362,12 +401,13 @@ color: #ff2642 !important;
    font-size: 60px;
 }
 .testimonial_outer{
-   min-height: 400px;
+  height: 400px!important;
    
 }
 .main_testimonial{
-   min-height: 500px;
+   height: 350px;
    text-align: center;
+   font-size: 12px;
 }
 
 
@@ -395,7 +435,7 @@ color: #ff2642 !important;
 
 .supportImage_section{
    background: url('/support-img.jpg');
-   min-height: 600px;
+   min-height: 400px;
    background-size: 100% 100%;
    padding-right: 30px;
    position: relative;
@@ -404,24 +444,25 @@ color: #ff2642 !important;
 
 .supportcontent_section{
    text-align: justify;
+   font-size: 13px;
 }
 
 
 .supportImage_sectionContent{
-   min-height: 100px;
-   min-width:120px;
+   min-height: 80px;
+   min-width:100px;
    position: absolute;
    bottom: 0px;
-   left:-40px;
+   left:-30px;
    background: #1f2c7b;
    color: white;
    text-align: center;
 }
 
 .support_sinceSection{
-   font-size: 35px; 
+   font-size: 30px; 
    font-family: bold;
-    margin-top: -20px;
+   /* margin-bottom:-10px; */
     
 }
 
@@ -437,8 +478,8 @@ color: #ff2642 !important;
 }
 
 .img_content{
-   width: 100px;
-   height: 70px;
+   min-width: 70px;
+   min-height: 70px;
    padding-top: 10px;
    font-size: 20px;
    background: #db0249;
@@ -471,18 +512,16 @@ color: #ff2642 !important;
 .topFooter_content{
    color:#eeeeee;
    font-weight: 400;
-   font-size: 16px;
+   font-size: 14px;
    text-align: justify;
 }
-.f{
-  text-align: right;
-}
+
 .footer_btn{
    width: 50px;
    background: #db0249;
    padding-left: 15px;
    padding-bottom: 5px;
-   font-size: 25px;
+   font-size: 20px;
 }
 
 .foot_content{
@@ -493,6 +532,7 @@ color: #ff2642 !important;
   color:#d9d9d9;
   font-size: 18px;
   font-weight: 400;
+  min-height: 20px;
 }
 
 /*Find a Job*/
@@ -514,28 +554,23 @@ color: #ff2642 !important;
    background: url('/how-applybg.png');
    background-size: 100% 100%;
    min-height: 200px;
+   background-repeat: no-repeat;
 }
 
 .about_header_content{
    color: white;
    text-align: center;
-
 }
-
 .about_intro{
    text-align: center;
 }
 
 .about_image{
-   min-height: 400px;
+   min-height: 200px;
 }
-
-
 .team_header{
    text-align: center;
 }
-
-
 
 .team_card{
    min-height: 200px;
@@ -754,11 +789,10 @@ color: #ff2642 !important;
  
  .date-badge1 {
    position: absolute;
-   top: 156px;
+   bottom: 0px;
    left: 0px;
    background-color: #db0249;
    color: white;
- 
    text-align: center;
  }
  
@@ -885,8 +919,8 @@ color: #ff2642 !important;
 }
 
 .nav_bar_logo{
-  height: 80px;
-  width: 80px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   border: 2px solid black;
 }

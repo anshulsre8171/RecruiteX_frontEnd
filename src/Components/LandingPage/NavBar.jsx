@@ -78,22 +78,22 @@ if (userType === "admin") {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/admin">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/admin">
                     <FaHome className="menu-icon" />&nbsp;Dashboard
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/admin/seekerlist">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/admin/seekerlist">
                     <FaUsers className="menu-icon" />&nbsp;Seeker List
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/admin/recruiterlist">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/admin/recruiterlist">
                     <FaUserTie className="menu-icon" />&nbsp;Recruiter List
                     </Link>
                   </li> 
                   <li className="nav-item" onClick={adminLogout}>
-                    <Link className="nav-link nav_font" aria-current="page">
+                    <Link className="nav-link nav_font d-flex align-items-center gap-1" aria-current="page">
                     <FaSignOutAlt className="menu-icon" />&nbsp;LogOut
                     </Link>
                   </li>
@@ -125,22 +125,22 @@ if (userType === "admin") {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/seeker">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/seeker">
                     <FaHome className="menu-icon" />&nbsp;Dashboard
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/seeker/jobapply">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/seeker/jobapply">
                     <FaBriefcase className="menu-icon" />&nbsp;Apply&nbsp;Job
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/seeker/appliedjob">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/seeker/appliedjob">
                     <FaCheckCircle className="menu-icon" />&nbsp;Applied&nbsp;Job
                     </Link>
                   </li> 
                   <li className="nav-item" onClick={seekerLogout}>
-                    <Link className="nav-link nav_font" aria-current="page">
+                    <Link className="nav-link nav_font d-flex align-items-center gap-1" aria-current="page">
                     <FaSignOutAlt className="menu-icon" />&nbsp;LogOut
                     </Link>
                   </li>
@@ -173,29 +173,29 @@ if (userType === "admin") {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/recruiter">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/recruiter">
                     <FaHome className="menu-icon" />&nbsp;Dashboard
                     </Link>
                   </li>
                  
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/recruiter/PostJob">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/recruiter/PostJob">
                     <FaBriefcase />&nbsp;Job&nbsp;Post
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/recruiter/postedjob">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/recruiter/postedjob">
                     <FaUser className="menu-icon" />&nbsp;PostedJobs
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link nav_font" aria-current="page" to="/recruiter/appliedjob">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/recruiter/appliedjob">
                     <FaCheckCircle className="menu-icon" />&nbsp;Applied&nbsp;Job
                     </Link>
                   </li>
                   
                   <li className="nav-item" onClick={recruiterLogout}>
-                    <Link className="nav-link nav_font" aria-current="page">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page">
                     <FaSignOutAlt className="menu-icon" />&nbsp;LogOut
                     </Link>
                   </li>
@@ -209,8 +209,8 @@ if (userType === "admin") {
   return (
     <>
       <div className="container-fluid navbar_main_row sticky-top px-0" ref={navRef}>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light p-0 px-3">
-              <Link className="navbar-brand" to="/">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light py-1 px-3">
+              <Link className="navbar-brand pe-4" to="/">
                 <img src="/logo.png" alt="logo" height={"45px"} />
               </Link>
               <button
@@ -225,24 +225,24 @@ if (userType === "admin") {
                 <span className="navbar-toggler-icon" />
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav nav_font">
+                <ul className="navbar-nav nav_font overflow-hidden">
                   <li className="nav-item">
-                    <Link className="nav-link pe-5" aria-current="page" to="/">
+                    <Link className="nav-link n ms-4 me-4 d-flex align-items-center gap-1" aria-current="page" to="/">
                     <FaHome />&nbsp;Home
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link pe-5" to="/findjob">
+                    <Link className="nav-link n me-4 d-flex align-items-center gap-1" to="/findjob">
                     <FaBriefcase />&nbsp;Find&nbsp;a&nbsp;Job
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link pe-5" to="/about">
+                    <Link className="nav-link n me-4 d-flex align-items-center gap-1" to="/about">
                     <FaInfoCircle />&nbsp;About
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link pe-5" to="/contact">
+                    <Link className="nav-link n me-4 d-flex align-items-center gap-1" to="/contact">
                     <FaPhoneAlt />&nbsp;Contact
                     </Link>
                   </li>

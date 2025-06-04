@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const userType = JSON.parse(localStorage.getItem("userType"));
     setRole(userType);
-  }, [role,location])
+  }, [location])
   return (
     <>
     

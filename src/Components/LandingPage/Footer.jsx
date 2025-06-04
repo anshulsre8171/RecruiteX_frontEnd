@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 function Footer() {
     return (
         <>
-            <div className="container-fluid px-1 py-3 mx-0 top_footer-container">
+            <div className="container-fluid px-1 py-3 m-0 top_footer-container">
                 <div className="container" style={{ paddingTop: "75px" }}>
                     <div className="row">
                         <div className="col-12 col-sm-6 col-md-3 pe-4 topFooter_content mb-4">
@@ -13,7 +13,7 @@ function Footer() {
                         </div>
                         <div className="col-12 col-sm-6 col-md-3 pe-4 topFooter_content mb-4">
                             <div className="h4 text-light">CONTACT INFO</div>
-                            <p className="mt-4">Address: Lucknow, <br /> Uttar Pradesh, 226022. <br /> <br /> Phone: +91-xx-xxxx-xxxx <br />Email: abc123@gmail.com</p>
+                            <p className="mt-4">Address: Lucknow, <br /> Uttar Pradesh, 226022. <br /> <br /> Phone:+91 xxxxxxxxxx <br />Email: an***@gmail.com</p>
                         </div>
                         <div className="col-12 col-sm-6 col-md-3 pe-4 topFooter_content mb-4">
                             <div className="h4 text-light">IMPORTANT LINK</div>
@@ -24,7 +24,7 @@ function Footer() {
                             <p className="mt-4">Heaven frucvitful doesn't cover lesser in  days appear creeping.</p>
                             <div className="input-group flex-nowrap">
                                 <input
-                                    type="email"
+                                    type="email" disabled
                                     className="form-control"
                                     placeholder="Email Address"
                                     aria-label="Email Address"
@@ -37,26 +37,26 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div className="row text-start mt-4 mb-2 p-2 bg-info">
+                    <div className="row text-start mt-1 mb-2 p-2"> 
                         <div className="col-12 col-sm-6 col-md-3">
-                            <img src="logo.png" alt="Logo" className="rounded-pill bg-light mb-2" height={"45px"} width={"80%"}/>
+                            <img src="logo.png" alt="Logo" className="rounded-2 bg-light mb-2 navbar-brand" height={"20px"}/>
                         </div>
                         <div className="col-12 col-sm-6 col-md-3 foot_content">
-                            <div className="h4 text-light">5000+ <span style={{ color: "#eeeeee", fontSize: 18, fontWeight: 300 }}>Visitors</span></div>
+                            <div className="h6 text-light">5000+ <span style={{ color: "#eeeeee", fontSize: 16, fontWeight: 300 }}>Visitors</span></div>
                         </div>
                         <div className="col-12 col-sm-6 col-md-3 foot_content">
-                            <div className="h4 text-light">451 <span style={{ color: "#eeeeee", fontSize: 18, fontWeight: 300 }}>Developers</span></div>
+                            <div className="h6 text-light">451+ <span style={{ color: "#eeeeee", fontSize: 16, fontWeight: 300 }}>Developers</span></div>
                         </div>
                         <div className="col-12 col-sm-6 col-md-3 foot_content">
-                            <div className="h4 text-light">568 <span style={{ color: "#eeeeee", fontSize: 18, fontWeight: 300 }}>Team members</span></div>
+                            <div className="h6 text-light">568+ <span style={{ color: "#eeeeee", fontSize: 16, fontWeight: 300 }}>Team members</span></div>
                         </div>
                     </div>
                 </div>
 
                 <hr className="mt-4" style={{ color: "gray" }} />
-                <div className="row text-secondary mb-3 mt-4 mx-0">
-                    <div className="col-sm-6 text-center">Copyright &copy; 2024 RecruiterX | This is developed by ...</div>
-                    <div className="col-sm-6 text-end">
+                <div className="row text-secondary mx-0">
+                    <div className="col-sm-6 text-center ps-4 "style={{fontSize:12}}>Copyright &copy; 2024 RecruiterX | This is developed by Anshul Sharma...</div>
+                    <div className="col-sm-6 pe-sm-5 mt-3 m-sm-0 text-center text-sm-end">
                         <a href="https://www.facebook.com" className="me-3" target="_blank" rel="noopener noreferrer">
                             <FaFacebookF />
                         </a>

@@ -4,7 +4,7 @@ function AdminDasboard(){
     return (
         <>
         <AdminSeeker/>
-<AdminRecruiter/>
+        <AdminRecruiter/>
         </>
     )
 }

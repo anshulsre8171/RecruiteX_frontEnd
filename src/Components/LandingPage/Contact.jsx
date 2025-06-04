@@ -2,11 +2,11 @@ import '../../App.css'
 function Contact(){
     return (
         <>
-        <div className="row contact_row mb-3">
+        <div className="row contact_row mb-3 m-0 p-0">
     {/* Add padding or margin to center the content and make it responsive */}
     <div className="col-0 col-sm-1"></div>
     <div className="col-12 col-sm-10">
-        <div className="row contact_container mt-5 pt-2">
+        <div className="row contact_container mt-5 py-2">
             <div className="col-12 col-md-6 text-center text-md-start">
                 <img className="contact_img img-fluid" src="contact.webp" alt="Contact" />
             </div>
@@ -15,7 +15,7 @@ function Contact(){
                 <p className="contact_para">
                     The right move at the right time saves your investment. Live the dream of expanding your business.
                 </p>
-                <div className="contact_form p-5 m-0 m-md-4">
+                <div className="contact_form p-sm-1">
                     {/* Responsive Form Fields */}
                     <div className="mb-3">
                         <input type="text" className="form-control" placeholder="Enter Your Name" />
@@ -27,7 +27,7 @@ function Contact(){
                         <input type="email" className="form-control" placeholder="Enter Your Email" />
                     </div>
                     <div className="mb-3">
-                        <input type="number" className="form-control" placeholder="Enter Your Number" />
+                        <input type="tel" className="form-control" placeholder="Enter Your Number" />
                     </div>
                     <div className="mb-3">
                         <textarea type="text" className="form-control" placeholder="Message"></textarea>
