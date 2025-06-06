@@ -25,6 +25,7 @@ import SeekerUpdate from "./Components/JobSeeker/SeekerProfile";
 import SeekerAppliedJob from './Components/JobSeeker/SeekerAppliedJob';
 import RecruiterAppliedJob from './Components/Recruiter/RecruiterAppliedJob';
 import { useEffect, useState } from "react";
+import ScrollToTop from "./Helpers/ScrollToTop";
 function App() {
   const location=useLocation()
   const [role, setRole] = useState('')
@@ -36,6 +37,7 @@ function App() {
     <>
     
         <NavBar />
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/findjob" element={<FindJob />} />

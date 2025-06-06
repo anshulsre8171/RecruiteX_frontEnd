@@ -227,7 +227,7 @@ if (userType === "admin") {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav nav_font overflow-hidden">
                   <li className="nav-item">
-                    <Link className="nav-link n ms-4 me-4 d-flex align-items-center gap-1" aria-current="page" to="/">
+                    <Link className="nav-link n me-4 d-flex align-items-center gap-1" aria-current="page" to="/">
                     <FaHome />&nbsp;Home
                     </Link>
                   </li>

@@ -16,6 +16,7 @@ function Testimonial() {
 
   const items=[review1,review2,review3,review4,review5,review3,review2,review4]
     return (<>
+    <div className="container-fluid p-0 m-0">
         <div className="row testimonial_outer mt-4" >
            
             <div className="col-sm-10 mx-auto">
@@ -24,6 +25,7 @@ function Testimonial() {
                 </div>
             </div>
         
+        </div>
         </div>
     </>)
 }

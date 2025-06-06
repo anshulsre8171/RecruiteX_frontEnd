@@ -31,7 +31,7 @@ html, body {
   z-index: 1030;
 }
 .nav_font{
-font-size: 18px;
+font-size: 14px;
 color:#212529 !important;
  }
 .nav_font:hover {
@@ -401,19 +401,20 @@ box-sizing: border-box;
    font-size: 60px;
 }
 .testimonial_outer{
-  height: 400px!important;
+  min-height: 400px!important;
    
 }
 .main_testimonial{
-   height: 350px;
+   min-height: 350px;
    text-align: center;
    font-size: 12px;
 }
 
 
-/* .support_container{
-   background: rgb(230, 228, 228);
-} */
+ .support_container{
+   /* background: rgb(230, 228, 228); */
+   min-height: 400px;
+} 
 
 
 .btn_support{
@@ -437,6 +438,7 @@ box-sizing: border-box;
    background: url('/support-img.jpg');
    min-height: 400px;
    background-size: 100% 100%;
+   
    padding-right: 30px;
    position: relative;
 
@@ -567,6 +569,7 @@ box-sizing: border-box;
 
 .about_image{
    min-height: 200px;
+   max-height: 450px;
 }
 .team_header{
    text-align: center;

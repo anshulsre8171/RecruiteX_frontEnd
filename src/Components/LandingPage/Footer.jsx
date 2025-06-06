@@ -42,13 +42,13 @@ function Footer() {
                             <img src="logo.png" alt="Logo" className="rounded-2 bg-light mb-2 navbar-brand" height={"20px"}/>
                         </div>
                         <div className="col-12 col-sm-6 col-md-3 foot_content">
-                            <div className="h6 text-light">5000+ <span style={{ color: "#eeeeee", fontSize: 16, fontWeight: 300 }}>Visitors</span></div>
+                            <div className="h6 text-light">5000+ <span style={{ color: "#eeeeee", fontSize:".91rem", fontWeight: 300 }}>Visitors</span></div>
                         </div>
                         <div className="col-12 col-sm-6 col-md-3 foot_content">
-                            <div className="h6 text-light">451+ <span style={{ color: "#eeeeee", fontSize: 16, fontWeight: 300 }}>Developers</span></div>
+                            <div className="h6 text-light">451+ <span style={{ color: "#eeeeee", fontSize: ".91rem", fontWeight: 300 }}>Developers</span></div>
                         </div>
                         <div className="col-12 col-sm-6 col-md-3 foot_content">
-                            <div className="h6 text-light">568+ <span style={{ color: "#eeeeee", fontSize: 16, fontWeight: 300 }}>Team members</span></div>
+                            <div className="h6 text-light">568+ <span style={{ color: "#eeeeee", fontSize: ".91rem", fontWeight: 300 }}>Team members</span></div>
                         </div>
                     </div>
                 </div>

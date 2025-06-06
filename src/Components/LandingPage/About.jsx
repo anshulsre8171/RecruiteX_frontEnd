@@ -54,26 +54,26 @@ function About() {
                     <div className="row about_intro pt-4 text-md-start p-2">
                         <span style={{color: "#fc82a2" ,fontSize:"1rem",fontWeight:600}}>OUR COMPANY</span>
                         <h2><b>About Our Company</b></h2>
-                        <p style={{ textAlign: 'justify' ,fontSize:".9rm" }}>
+                        <p style={{ textAlign: 'justify' ,fontSize:"1rem", fontFamily: "Roboto , sans-serif" }}>
                             TalentHunt Job Portal is a specialized platform designed to connect job seekers with potential employers.
                             It serves as a bridge between professionals looking for new opportunities and companies searching for skilled talent.
                             TalentHunt streamlines the job search and recruitment process, making it easier for both sides to find the perfect match efficiently.
                         </p>
                         <br />
-                        <div className="about_image text-center">
-                            <img src="img-about1.png" alt="About Company" className="img-fluid " />
+                        <div className=" text-center">
+                            <img src="img-about1.png" alt="About Company" className="about_image img-fluid " />
                         </div>
                     </div>
                     <div className="row pt-1 p-2">
                         <h2><b>What we can do?</b></h2>
-                        <p style={{ textAlign: 'justify',fontSize:".9rm" }}>
+                        <p style={{ textAlign: 'justify',fontSize:"1rem", fontFamily: "Roboto , sans-serif" }}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptas vel voluptatem nobis, quod commodi velit,
                             assumenda laudantium sint quos sapiente, suscipit deleniti laboriosam facilis iste earum alias dicta quo repellat accusamus nemo ipsum!
                         </p>
-                        <p style={{ textAlign: 'justify' ,fontSize:".9rm"}}>
+                        <p style={{ textAlign: 'justify' ,fontSize:"1rem", fontFamily: "Roboto , sans-serif"}}>
                             Doloremque quo sapiente accusantium, aut tempora, incidunt nulla iusto magni ex maiores qui nemo consectetur voluptate.
                         </p>
-                        <p style={{ textAlign: 'justify' ,fontSize:".9rm" }}>
+                        <p style={{ textAlign: 'justify' ,fontSize:"1rem", fontFamily: "Roboto , sans-serif"}}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptas vel voluptatem nobis, quod commodi velit,
                             assumenda laudantium sint quos sapiente, suscipit deleniti laboriosam facilis iste earum alias dicta quo repellat accusamus nemo ipsum!
                         </p>
@@ -89,7 +89,7 @@ function About() {
                 <div className="col-12 col-sm-10 px-4 team_header">
                     <span style={{color: "#fc82a2" ,fontSize:"1rem",fontWeight:600}}>OUR COMPANY</span>
                     <h2><b>Meet Our Team</b></h2>
-                    <p style={{ textAlign: 'justify',fontSize:".9rm" }}>
+                    <p style={{ textAlign: 'justify',fontSize:"1rem", fontFamily: "Roboto , sans-serif" }}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptas vel voluptatem nobis, quod commodi velit,
                         assumenda laudantium sint quos sapiente, suscipit deleniti laboriosam facilis iste earum alias dicta quo repellat accusamus nemo ipsum!
                     </p>
@@ -100,9 +100,9 @@ function About() {
                                 <div className="col-12 col-sm-6 col-md-4 col-xl-3 my-2 team_card">
                                     <div className="teamchild_div text-center">
                                         <div className="team_icon">
-                                            <img src={card.img} alt="Team Member" className="img-fluid" />
+                                            <img src={card.img} alt="Team Member" className="img-fluid border-0 outline-0" />
                                         </div>
-                                        <div className="team_name">{card.name}</div>
+                                        <div className="team_name bg-dark">{card.name}</div>
                                         <div className="team_content">{card.title}</div>
                                         <div className="team_content">{card.location}</div>
                                         <div className="team_review">{card.review}</div>
