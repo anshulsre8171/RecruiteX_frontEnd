@@ -4,6 +4,9 @@ import * as yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { swalFire } from '../../Helpers/Swalfire';
+import {useDispatch} from 'react-redux'
+import {info} from '../../Redux/Slice';
+
 const schema = yup
   .object()
   .shape({
@@ -15,6 +18,7 @@ const schema = yup
 // const API_URL=import.meta.env.VITE_APP_API_URL
 const API_URL="http://localhost:9000"
 const navigate=useNavigate()
+const dispatch=useDispatch()
 
 const {register,handleSubmit, formState:{errors}}=useForm({
     resolver:yupResolver(schema)
@@ -30,8 +34,11 @@ const {register,handleSubmit, formState:{errors}}=useForm({
             }
            })
     if(response.data.code==200){
-
-        localStorage.setItem("data",JSON.stringify(response.data.data))
+        const obj = response.data.data
+        console.log(obj);
+        
+        dispatch(info(obj))
+        // localStorage.setItem("data",JSON.stringify(response.data.data))
         localStorage.setItem("userType",JSON.stringify('admin'))
 
 

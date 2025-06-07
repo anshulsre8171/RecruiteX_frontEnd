@@ -4,6 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup';   // Form Validation
 import * as yup from 'yup';   // Form Validation
 // import '../../app.css'
 import axios from 'axios';
+import { useSelector } from 'react-redux'
+
 
 const schema = yup
     .object()
@@ -19,8 +21,11 @@ const schema = yup
 
 const AdminUpdate = () => {
    const API_URL=import.meta.env.VITE_APP_API_URL
-      useEffect(()=>{
-        const userdetails= JSON.parse(localStorage.getItem("data"));
+    const userdetails=useSelector((state)=>state.counter.value)
+    //console.log(userdetails,"ddd");
+    
+      useEffect(()=>{    
+        //const userdetails= JSON.parse(localStorage.getItem("data"));
         if(userdetails){
           setValue("name",userdetails.name);
           setValue("email",userdetails.email);
@@ -39,7 +44,8 @@ const AdminUpdate = () => {
           alert("Please select an image"); 
           return ;
          } 
-      const temData=JSON.parse(localStorage.getItem("data"));
+      const info=useSelector((state)=>state.counter.value)
+      //const temData=JSON.parse(localStorage.getItem("data"));
         const formData = new FormData();
         formData.append('name', data.name);
         formData.append('email', data.email);
@@ -47,7 +53,7 @@ const AdminUpdate = () => {
         formData.append('password', data.password);
         formData.append('location', data.location);
         formData.append('img', data.img[0]);
-        const response=await axios.put( `${API_URL}/api/admin-update/${temData._id}`,formData,{
+        const response=await axios.put( `${API_URL}/api/admin-update/${info._id}`,formData,{
           headers:{
             "Content-Type":"multipart/form-data"
           }
