@@ -19,10 +19,12 @@ const {register,handleSubmit, formState:{errors}}=useForm({
     resolver:yupResolver(schema)
 })
       const handleData=async(data)=>{
+        setLoading(true); // Show spinner
          const payLoad={
          email:data.email,
          password:data.password
         }
+        try {
       const response=await   axios.post(`${API_URL}/api/Recruiter-login`,payLoad,{
             headers:{
                 "Content-Type":"application/json"
@@ -42,6 +44,11 @@ const {register,handleSubmit, formState:{errors}}=useForm({
             //alert("Invaild Email or password")
             swalFire("Auth", "Invaild Email or password", "error")
             
+        }  } catch (error) {
+         console.error(error);
+  
+        } finally {
+         setLoading(false);
         }
       
       }
@@ -76,10 +83,13 @@ const {register,handleSubmit, formState:{errors}}=useForm({
                 </div>
                 
                 <div className="row mb-4 pt-3">
-                    <input  className="register_submit form-control " 
-                    type="submit"
-                    value="Login"
-                    />
+                <button className="btn btn-primary" disabled={loading}>
+                 {loading ? (
+                    <> <span className="spinner-border spinner-border-sm me-2" role="status"
+                    aria-hidden="true" ></span> Logging in...
+                    </>
+                    ) : ("Login")}
+                </button>
                 </div>
                 </form>     
                 </div>
