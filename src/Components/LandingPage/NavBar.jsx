@@ -62,7 +62,8 @@ if (userType === "admin") {
       <div className="container-fluid navbar_main_row mb-1 px-0 sticky-top" ref={navRef}>
           <nav className="navbar navbar-expand-lg navbar-light bg-light p-0 px-3">
               <Link className="navbar-brand" to="/">
-                <img className='nav_bar_logo' src={`${API_URL}/upload/${data.img}`} />
+                {/* <img className='nav_bar_logo' src={`${API_URL}/upload/${data.img}`} /> */}
+                <img src="/logo.png" alt="logo" height={"45px"} />
               </Link>
               <button
                 className="navbar-toggler"
@@ -78,10 +79,15 @@ if (userType === "admin") {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/admin">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/adminDash">
                     <FaHome className="menu-icon" />&nbsp;Dashboard
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/admin">
+                    <FaHome className="menu-icon" />&nbsp;Profile
+                    </Link>
+                  </li> 
                   <li className="nav-item">
                     <Link className="nav-link n nav_font d-flex align-items-center gap-1" aria-current="page" to="/admin/seekerlist">
                     <FaUsers className="menu-icon" />&nbsp;Seeker List
@@ -109,7 +115,9 @@ if (userType === "admin") {
       <div className="container-fluid navbar_main_row mb-1 px-0 sticky-top" ref={navRef}> 
           <nav className="navbar navbar-expand-lg navbar-light bg-light p-0 px-3">
               <Link className="navbar-brand" to="/">
-              <img className='nav_bar_logo' src={`${API_URL}/upload/${data.img}`} />
+              {/* <img className='nav_bar_logo' src={`${API_URL}/upload/${data.img}`} /> */}
+                <img src="/logo.png" alt="logo" height={"45px"} />
+
               </Link>
               <button
                 className="navbar-toggler"
@@ -156,7 +164,8 @@ if (userType === "admin") {
       <div className="container-fluid navbar_main_row mb-1 px-0 sticky-top" ref={navRef}>
           <nav className="navbar navbar-expand-lg navbar-light  bg-light p-0 px-3">
               <Link className="navbar-brand" to="/">
-              <img className='nav_bar_logo' src={`${API_URL}/upload/${data.img}`} />
+              {/* <img className='nav_bar_logo' src={`${API_URL}/upload/${data.img}`} /> */}
+                <img src="/logo.png" alt="logo" height={"45px"} />
             
               </Link>
               <button

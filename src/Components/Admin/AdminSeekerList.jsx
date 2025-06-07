@@ -1,5 +1,6 @@
 import { useEffect ,useState} from "react"
 import axios from "axios"
+import { swalFire } from "../../Helpers/Swalfire"
 function AdminSeeker(){
      const API_URL=import.meta.env.VITE_APP_API_URL
     const [seeker, setSeeker] = useState([])
@@ -33,63 +34,64 @@ function AdminSeeker(){
    } 
    }
 
+   const handleDelete=async(item)=>{
+    console.log(item);
+    
+    swalFire("Alert","Data Delete Succesfull", "success")
+   }
+   const handleEdit=async(item)=>{
+    console.log(item);
+    
+    swalFire("Success","Data Edit Succesfull", "success")
+   }
      return (
         <>
         <div className="container">
-            <div className="row justify-content-center">
+    <h4 className="text-center my-4">Job Seekers List</h4>
+    <div className="table-responsive">
+        <table className="table table-bordered table-striped">
+            <thead className="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Location</th>
+                    <th>Qualification</th>
+                    <th>Preference</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
                 {
-                    seeker.map((item, index) =>
-                     (
-                        <div className="col-12 col-md-6 col-lg-4 seeker_list my-2 mx-2" key={index}>
-                            <div className="card border border-none p-2 h-100">
-                                <div className="text-center">
-                                    <img className="seeker_img img-fluid rounded-circle" src={`${API_URL}upload/${item.img}`} alt={item.name} style={{ maxWidth: '100px', height: '100px' }} />
-                                </div>
-                                <div className="seeker_name text-center mt-2 font-weight-bold">{item.name}</div>
-                                <table className="table table-borderless mt-3">
-                                    <tbody>
-                                        <tr>
-                                            <td className="text-right font-weight-bold">Email:</td>
-                                            <td className="text-left">{item.email}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="text-right font-weight-bold">Contact:</td>
-                                            <td className="text-left">{item.contact}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="text-right font-weight-bold">Location:</td>
-                                            <td className="text-left">{item.location}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="text-right font-weight-bold">Qualification:</td>
-                                            <td className="text-left">{item.qualification}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="text-right font-weight-bold">Preference:</td>
-                                            <td className="text-left">{item.preference}</td>
-                                        </tr>
-                                        <tr>
-                                           <div className="row">
-                                           <td className="text-right font-weight-bold"> 
-                                          <center> 
-                                            
-                                            <div className="btn  btn_block_unblock" onClick={()=>handleBlock(item)} >{item.isBlock ? "UnBlock" :"Block"}</div>
-                                            
-                                            </center>
-                                            </td>
-                                           </div>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div className="text-center mt-auto">
-                                    {/* <button className=" seeker_btn ">{item.blockBtn}</button> */}
-                                </div>
-                            </div>
-                        </div>
+                    seeker.map((item, index) => (
+                        <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{item.name}</td>
+                            <td>{item.email}</td>
+                            <td>{item.contact}</td>
+                            <td>{item.location}</td>
+                            <td>{item.qualification}</td>
+                            <td>{item.preference}</td>
+                            <td>
+                                <button className="btn btn-sm btn-warning mx-1" onClick={() => handleBlock(item)}>
+                                    {item.isBlock ? "UnBlock" : "Block"}
+                                </button>
+                                <button className="btn btn-sm btn-danger mx-1" onClick={() => handleDelete(item)}>
+                                Delete
+                                </button>
+                                <button className="btn btn-sm btn-info mx-1" onClick={() => handleEdit(item)}>
+                                Update
+                                </button>
+                            </td>
+                        </tr>
                     ))
                 }
-            </div>
-        </div>
+            </tbody>
+        </table>
+    </div>
+</div>
+
         </>
     )
 }

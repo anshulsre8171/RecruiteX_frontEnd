@@ -3,8 +3,8 @@ import AdminRecruiter from "./AdminRecruiterList"
 function AdminDasboard(){
     return (
         <>
-        <AdminSeeker/>
         <AdminRecruiter/>
+        <AdminSeeker/>
         </>
     )
 }

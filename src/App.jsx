@@ -26,6 +26,10 @@ import SeekerAppliedJob from './Components/JobSeeker/SeekerAppliedJob';
 import RecruiterAppliedJob from './Components/Recruiter/RecruiterAppliedJob';
 import { useEffect, useState } from "react";
 import ScrollToTop from "./Helpers/ScrollToTop";
+import { Provider } from 'react-redux'
+import { store } from './Redux/Store.js'
+
+
 function App() {
   const location=useLocation()
   const [role, setRole] = useState('')
@@ -51,6 +55,7 @@ function App() {
           {/* admin routes */}
           {role == "admin" && (<>
             <Route path="/admin" element={<AdminUpdate />} />
+            <Route path="/adminDash" element={<AdminDasboard />} />
             <Route path="/admin/seekerlist" element={<><AdminSeeker /></>} />
             <Route path="/admin/recruiterlist" element={<><AdminRecruiter /></>} />
           </>)}
@@ -88,7 +93,9 @@ function App() {
 function WrapperRouter(){
   return(
     <BrowserRouter>
+    <Provider store={store}>
     <App/>
+    </Provider>
     </BrowserRouter>
   )
 }

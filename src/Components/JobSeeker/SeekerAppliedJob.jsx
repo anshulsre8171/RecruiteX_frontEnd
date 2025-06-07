@@ -37,12 +37,12 @@ function SeekerAppliedJob(){
                 {jobData.map((el) => {
                     // console.log(el,"###########################################")
                     return (
-                        <div className="card p-3 mb-3 postedjob_card">
+                        <div className="card p-3 mb-3 postedjob_card mx-5">
                         <div className="row d-flex justify-content-center align-items-center">
                             {/* Logo Column */}
-                            <div className="col-md-3 d-flex justify-content-center align-items-center">
+                            {/* <div className="col-md-3 d-flex justify-content-center align-items-center">
                                 <img src={`${API_URL}/upload/${el.logo}`} alt="Company Logo" className="img-fluid bg-dark" style={{ maxHeight: '100px' }} />
-                            </div>
+                            </div> */}
 
                             {/* Company Name, Job Title, and Job Type Column */}
                             <div className="col-md-3 d-flex justify-content-start flex-column my-3">

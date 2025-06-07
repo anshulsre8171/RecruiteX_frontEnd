@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';    // Form Validation
 import { yupResolver } from '@hookform/resolvers/yup';   // Form Validation
 import * as yup from 'yup';   // Form Validation
 import axios from 'axios';  // fetch data
+import { swalFire } from '../../Helpers/Swalfire';
 
 // form validation schema
 const schema = yup
@@ -49,7 +50,9 @@ const { register, handleSubmit,reset, formState: { errors } } = useForm({
     })  
     if(response.data.code==200){
 
-      alert("Job posted successfully");
+      // alert("Job posted successfully");
+      swalFire("Job Post", "Job posted successfully", "success")
+      
       reset()
     }
   }

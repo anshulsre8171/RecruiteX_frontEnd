@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
+import { swalFire } from '../../Helpers/Swalfire';
 
 // Validation schema using Yup
 const schema = Yup.object().shape({
@@ -62,7 +63,9 @@ const SeekerUpdate = () => {
       });
 
       if (response.data.code === 200) {
-        alert("Profile updated successfully");
+        // alert("Profile updated successfully");
+        swalFire("Update", "Profile SuccessFull  Updated!.", "success")
+
       }
     } catch (error) {
       console.error("Error updating profile", error);
