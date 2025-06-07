@@ -15,8 +15,8 @@ const schema = yup
   })
 
  function AdminLogin(){
-// const API_URL=import.meta.env.VITE_APP_API_URL
-const API_URL="http://localhost:9000"
+const API_URL=import.meta.env.VITE_APP_API_URL
+//const API_URL="http://localhost:9000"
 const navigate=useNavigate()
 const dispatch=useDispatch()
 
