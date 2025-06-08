@@ -44,7 +44,8 @@ const token = JSON.parse(localStorage.getItem("token"))
         })
         if (response.data.code == 200) {
             fetchData()
-            alert("Status Updaetd Successfully..")
+           // alert("Status Updaetd Successfully..")
+           swalFire("Auth","Status Updaetd Successfully.." , "success")
         }
     }
 

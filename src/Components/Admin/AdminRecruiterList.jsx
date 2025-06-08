@@ -58,7 +58,7 @@ const AdminRecruiter=({ setLoading })=> {
                 })
         console.log(result);
         if (result) {
-            toast.success(result.data.message)
+             swalFire("Auth", result.data.message, "success")
         }
         fetchData()
     }

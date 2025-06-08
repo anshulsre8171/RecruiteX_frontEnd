@@ -15,6 +15,7 @@ const schema = yup
 
  function RecruiterLogin(){
 const navigate=useNavigate()
+   const [loading, setLoading] = useState(false);
  const API_URL=import.meta.env.VITE_APP_API_URL
 
 const {register,handleSubmit, formState:{errors}}=useForm({
