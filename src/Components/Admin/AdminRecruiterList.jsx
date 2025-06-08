@@ -11,7 +11,7 @@ const AdminRecruiter=({ setLoading })=> {
     const fetchData = async () => {
         try {
             if (setLoading){
-                console.log("Seeker setLoading(true)");
+                //console.log("Seeker setLoading(true)");
                  setLoading(true);
             };
             setLocalLoading(true);
@@ -48,7 +48,14 @@ const AdminRecruiter=({ setLoading })=> {
         }
     }
     const handleDelete = async (_id) => {
-        const result = await axios.delete(`${API_URL}/api/deleterec/${_id}`)
+        const token = JSON.parse(localStorage.getItem("token"))
+        console.log(token,"jjjj");
+        
+        const result = await axios.delete(`${API_URL}/api/deleterec/${_id}`, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
         console.log(result);
         if (result) {
             toast.success(result.data.message)

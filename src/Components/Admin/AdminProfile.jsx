@@ -22,16 +22,16 @@ const schema = yup
 const AdminUpdate = () => {
    const API_URL=import.meta.env.VITE_APP_API_URL
     const userdetails=useSelector((state)=>state.counter.value)
-    //console.log(userdetails,"ddd");
+   // console.log(userdetails._doc,"ddd");
     
       useEffect(()=>{    
         //const userdetails= JSON.parse(localStorage.getItem("data"));
         if(userdetails){
-          setValue("name",userdetails.name);
-          setValue("email",userdetails.email);
-          setValue("contact",userdetails.contact);
-          setValue("password",userdetails.password);
-          setValue("location",userdetails.location)
+          setValue("name",userdetails._doc.name);
+          setValue("email",userdetails._doc.email);
+          setValue("contact",userdetails._doc.contact);
+          setValue("password",userdetails._doc.password);
+          setValue("location",userdetails._doc.location)
         }
       },[])
     

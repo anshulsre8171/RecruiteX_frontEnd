@@ -37,13 +37,14 @@ function AdminLogin() {
                     "Content-Type": "application/json"
                 }
             })
+            
             if (response.data.code == 200) {
                 const obj = response.data.data
-                console.log(obj);
-
+               // console.log(obj.token);
                 dispatch(info(obj))
                 // localStorage.setItem("data",JSON.stringify(response.data.data))
                 localStorage.setItem("userType", JSON.stringify('admin'))
+                localStorage.setItem("token", JSON.stringify(obj.token))
 
 
                 //alert("Login Successfull !...")

@@ -8,16 +8,17 @@ const AdminSeeker =({ setLoading })=> {
     const API_URL = import.meta.env.VITE_APP_API_URL
     const [seeker, setSeeker] = useState([])
    const [localLoading, setLocalLoading] = useState(true);
-
+const token = JSON.parse(localStorage.getItem("token"))
     const fetchData = async () => {
         try {
             if (setLoading) {
-                              console.log("Seeker setLoading(true)");
+                //console.log("Seeker setLoading(true)");
                  setLoading(true);
             }
             setLocalLoading(true);
             const response = await axios.get(`${API_URL}/api/admin-seekerlist`, {
                 headers: {
+                    "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
                 }
             })
@@ -48,10 +49,15 @@ const AdminSeeker =({ setLoading })=> {
     }
 
     const handleDelete = async (_id) => {
-        const result = await axios.delete(`${API_URL}/api/deletesec/${_id}`)
-        console.log(result);
+        const result = await axios.delete(`${API_URL}/api/deletesec/${_id}`, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+        // console.log(result.data.message);
         if (result) {
-            toast.success(result.data.message)
+            // toast.success(result.data.message)
+             swalFire("Auth", result.data.message, "success")
         }
         fetchData()
     }
