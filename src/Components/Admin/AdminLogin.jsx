@@ -48,7 +48,7 @@ function AdminLogin() {
 
                 //alert("Login Successfull !...")
                 swalFire("Auth", "Login Successfull !...", "success")
-                navigate('/admin/recruiterlist')
+                navigate('/adminDash')
             } else {
                 //alert("Invalid Email or Password !...")
                 swalFire("Auth", "Invalid Email or Password !...", "error")

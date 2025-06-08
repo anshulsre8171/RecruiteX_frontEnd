@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { swalFire } from '../../Helpers/Swalfire';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 const schema = yup
     .object()
     .shape({
@@ -29,13 +30,16 @@ const schema = yup
         // gender: yup.string().oneOf(["Male", "Female", "Other"], "Invalid gender").required(),
     })
 function SeekerRegister() {
- const API_URL=import.meta.env.VITE_APP_API_URL
-  const navigate=useNavigate()
+    const API_URL = import.meta.env.VITE_APP_API_URL
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState(false);
+
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
     const handleData = async (data) => {
-       //  console.log(`${API_URL}`,"ssssssssssssssssss");
+        //  console.log(`${API_URL}`,"ssssssssssssssssss");
+        setLoading(true); // Show spinner
         const formData = new FormData();
         formData.append("name", data.name);
         formData.append("img", data.img[0]);
@@ -44,18 +48,28 @@ function SeekerRegister() {
         formData.append("password", data.password)
         formData.append("qualification", data.qualification)
         formData.append("location", data.location)
-        formData.append("preference", data.jobPreference)
+        formData.append("preference", data.preference)
         formData.append("resume", data.resume[0])
-       
-        
-        await axios.post(`${API_URL}/api/seeker-register`, formData, {
-            headers: {
-                "Content-Type": "multipart/form-data"
+        try {
+            const response = await axios.post(`${API_URL}/api/seeker-register`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            })
+            if (response.data.code == 200) {
+                //alert("Registation SuccessFull !.")
+                swalFire("Auth", response.data.message, "success")
+                navigate("/seeker/login")
             }
-        })
-        //alert("Registation SuccessFull !.")
-        swalFire("Auth", "Registation SuccessFull !.", "success")
-        navigate("/seeker/login")
+            else {
+                swalFire("Auth", response.data.message, "error")
+            }
+        } catch (error) {
+            console.error(error);
+
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (<>
@@ -139,17 +153,20 @@ function SeekerRegister() {
                                         className="form-control"
                                         type="file"
                                         accept="application/pdf"
-                                         title="Select your Resume only PDF formate"
+                                        title="Select your Resume only PDF formate"
                                         {...register('resume')}
                                     />
 
                                     {errors.resume?.message && <span className='error_msg'>{errors.resume?.message}</span>}
                                 </div>
                                 <div className="row mb-4">
-                                    <input className="register_submit form-control "
-                                        type="submit"
-                                        value="SignUp"
-                                    />
+                                    <button className="btn btn-primary" disabled={loading}>
+                                        {loading ? (
+                                            <> <span className="spinner-border spinner-border-sm me-2" role="status"
+                                                aria-hidden="true" ></span> Sign In...
+                                            </>
+                                        ) : ("Sign In")}
+                                    </button>
                                 </div>
                             </form>
                         </div>
