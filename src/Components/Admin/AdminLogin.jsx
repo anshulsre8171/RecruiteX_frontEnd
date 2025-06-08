@@ -44,7 +44,7 @@ function AdminLogin() {
                 dispatch(info(obj))
                 // localStorage.setItem("data",JSON.stringify(response.data.data))
                 localStorage.setItem("userType", JSON.stringify('admin'))
-                localStorage.setItem("token", JSON.stringify(obj.token))
+                localStorage.setItem("token", JSON.stringify(response.data.token))
 
 
                 //alert("Login Successfull !...")
